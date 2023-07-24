@@ -8,6 +8,7 @@ int main() {
   mnl::Rational r4(r3);
   mnl::Rational r5(18,24);
   mnl::Rational r6;
+  mnl::Rational r7 = {2,9};
   r2 += r1;
   r4 = r3 / r3;
 
