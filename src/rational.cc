@@ -58,6 +58,18 @@ Rational::Rational( int n, int d ) {
   _denominator = d;
 }
 
+Rational::Rational( int r[2] ) {
+  if( r[1] == 0 ) {
+    throw std::runtime_error("Math error: Rational number with zero denominator");
+  }
+  if( r[1] < 0 ) {
+    r[0] *= -1;
+    r[1] *= -1;
+  }
+  _numerator = r[0];
+  _denominator = r[1];
+}
+
 Rational::Rational( const Rational& r ) : _numerator{r._numerator}, _denominator{r._denominator} {
 }
 
@@ -143,6 +155,10 @@ void Rational::operator=( const int i[2] ){
   _numerator = i[0];
   _denominator = i[1];
   simplify();
+}
+
+double Rational::toDouble() {
+  return (double)_numerator / _denominator;
 }
 
 } // namespace mnl

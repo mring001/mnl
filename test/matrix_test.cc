@@ -3,6 +3,8 @@
 */
 #include <iostream>
 #include <mnl/matrix.h>
+#include <mnl/rational.h>
+#include <mnl/identity_matrix_factory.h>
 
 int main() {
   mnl::Matrix<int, 2, 3> m1;
@@ -28,5 +30,17 @@ int main() {
   std::cout << "m2 * m6 = \n";
   std::cout << m7;
 
+  mnl::Rational rat[2][2] = { {{3,5}, {2,9}}, {{1,4}, {5,6}} };
+  mnl::Matrix<mnl::Rational,2,2> m8 = rat;
+  std::cout << "m8 as Rational matrix:\n";
+  std::cout << m8 << "\n";
+  mnl::Matrix<double,2,2> m9 = mnl::Matrix<double,2,2>::approximate(m8);
+  std::cout << "m8 as double approximation:\n";
+  std::cout << m9 << "\n";
+
+  mnl::Matrix<int,4,4> i4;
+  i4 = mnl::IdentityMatrixFactory<int>::create<4>();
+  std::cout << "I4:\n";
+  std::cout << i4 << "\n";
   return 0;
 }

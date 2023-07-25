@@ -4,6 +4,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+#include "mnl/rational.h"
 #include <iostream>
 
 namespace mnl {
@@ -115,6 +116,16 @@ Matrix<T,X,Z> operator*( const Matrix<T,Y,Z>& m ) {
 
 T get(int i, int j) const {
   return _values[i][j];
+}
+
+Matrix<double,X,Y> static approximate( Matrix<Rational,X,Y> m ) {
+  Matrix<double,X,Y> retVal;
+  for( int i = 0; i < X; i++ ) {
+    for( int j = 0; j < Y; j++ ) {
+      retVal(i,j) = m(i,j).toDouble();
+    }
+  }
+  return retVal;
 }
 
 private:

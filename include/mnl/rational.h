@@ -13,6 +13,7 @@ public:
 Rational();
 Rational( int n );
 Rational( int n, int d );
+Rational( int r[2] );
 Rational( const Rational& r );
 
 void simplify();
@@ -29,6 +30,7 @@ void     operator/=( const Rational& r );
 bool     operator==( const Rational& r );
 bool     operator!=( const Rational& r );
 void     operator=( const int i[2] );
+double   toDouble();
 
 friend std::ostream &operator<<( std::ostream &output, const Rational &r ) {
   output << r._numerator;
