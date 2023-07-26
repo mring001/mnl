@@ -5,6 +5,7 @@
 #include <mnl/matrix.h>
 #include <mnl/rational.h>
 #include <mnl/identity_matrix_factory.h>
+#include <mnl/augmented_matrix.h>
 
 int main() {
   mnl::Matrix<int, 2, 3> m1;
@@ -42,5 +43,9 @@ int main() {
   i4 = mnl::IdentityMatrixFactory<int>::create<4>();
   std::cout << "I4:\n";
   std::cout << i4 << "\n";
+
+  mnl::Matrix<mnl::Rational,2,2> i2;
+  i2 = mnl::IdentityMatrixFactory<mnl::Rational>::create<2>();
+  mnl::AugmentedMatrix<mnl::Rational,2,2,2>(m8, i2);
   return 0;
 }

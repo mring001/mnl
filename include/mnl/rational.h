@@ -30,6 +30,7 @@ void     operator/=( const Rational& r );
 bool     operator==( const Rational& r );
 bool     operator!=( const Rational& r );
 void     operator=( const int i[2] );
+void     operator=( int i );
 double   toDouble();
 
 friend std::ostream &operator<<( std::ostream &output, const Rational &r ) {

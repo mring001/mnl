@@ -157,6 +157,11 @@ void Rational::operator=( const int i[2] ){
   simplify();
 }
 
+void Rational::operator=( int i ) {
+  _numerator = i;
+  _denominator = 1;
+}
+
 double Rational::toDouble() {
   return (double)_numerator / _denominator;
 }
