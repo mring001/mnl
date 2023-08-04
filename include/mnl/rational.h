@@ -1,8 +1,8 @@
 /*
  rational.h
 */
-#ifndef RATIONAL_H
-#define RATIONAL_H
+#ifndef MNL_RATIONAL_H
+#define MNL_RATIONAL_H
 
 #include <iostream>
 
@@ -35,7 +35,8 @@ double   toDouble();
 
 friend std::ostream &operator<<( std::ostream &output, const Rational &r ) {
   output << r._numerator;
-  if( r._denominator != 1 ) {
+
+  if( r._denominator != 1 && r._numerator != 0 ) {
     output << "/" << r._denominator;
   }
   return output;
@@ -48,4 +49,4 @@ private:
 
 } // namespace mnl
 
-#endif // RATIONAL_H
+#endif // MNL_RATIONAL_H
