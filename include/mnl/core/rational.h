@@ -8,6 +8,8 @@
 
 namespace mnl {
 
+namespace core {
+
 class Rational {
 public:
 Rational();
@@ -46,6 +48,8 @@ private:
   int _numerator;
   int _denominator;
 }; // class Rational
+
+} // namespace core
 
 } // namespace mnl
 

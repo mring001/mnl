@@ -1,11 +1,13 @@
 /*
  rational.cc
 */
-#include "mnl/rational.h"
+#include "mnl/core/rational.h"
 #include <cmath>
 #include <stdexcept>
 
 namespace mnl {
+
+namespace core {
 
 // Input: positive integers a,b with a <= b
 // Output: greatest common denominator of a & b
@@ -165,5 +167,7 @@ void Rational::operator=( int i ) {
 double Rational::toDouble() {
   return (double)_numerator / _denominator;
 }
+
+} // namespace core
 
 } // namespace mnl

@@ -1,14 +1,16 @@
 #include <iostream>
-#include <mnl/rational.h>
+#include <mnl/core/rational.h>
 
 int main() {
-  mnl::Rational r1;
-  mnl::Rational r2(5);
-  mnl::Rational r3(3,4);
-  mnl::Rational r4(r3);
-  mnl::Rational r5(18,24);
-  mnl::Rational r6;
-  mnl::Rational r7 = {2,9};
+  mnl::core::Rational r1;
+  mnl::core::Rational r2(5);
+  mnl::core::Rational r3(3,4);
+  mnl::core::Rational r4(r3);
+  mnl::core::Rational r5(18,24);
+  mnl::core::Rational r6;
+  mnl::core::Rational r7 = {2,9};
+  mnl::core::Rational r8 = {3,-8};
+  mnl::core::Rational r9 = {0,9};
   r2 += r1;
   r4 = r3 / r3;
 
@@ -19,5 +21,7 @@ int main() {
 
   r6 = {3,17};
   std::cout << "r6 = " << r6 << "\n";
+  std::cout << "r8 = " << r8 << "\n";
+  std::cout << "r9 = " << r9 << "\n";
   return 0;
 }

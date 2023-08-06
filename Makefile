@@ -26,13 +26,13 @@ install: $(LIB)/$(LIBFILE)
 	ln -s $(prefix)/lib/$(LIBFILE) $(prefix)/lib/$(LINKNAME)
 	@echo Installing header files to $(prefix)/$(INC)/$(PACKAGE)
 	install -d -m 0755 $(prefix)/$(INC)/$(PACKAGE)
-	install -m 0644 $(INC)/$(PACKAGE)/*.h $(prefix)/$(INC)/$(PACKAGE)
+	install -m 0644 $(INC)/$(PACKAGE)/core/*.h $(prefix)/$(INC)/$(PACKAGE)
 
 uninstall:
 	@echo Uninstalling from $(prefix)
 	rm -f $(prefix)/lib/$(LIBFILE)
 	rm -f $(prefix)/lib/$(LINKNAME)
-	rm -rf $(prefix)/$(INC)/$(PACKAGE)
+	rm -rf $(prefix)/$(INC)/$(PACKAGE)/core
 
 $(OBJ)/%.o: $(SRC)/%.cc
 	$(CXX) -I$(INC) $(CXXFLAGS) -o $@ $^ 
